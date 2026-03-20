@@ -32,15 +32,19 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return session;
     },
     async signIn({ user, account, profile }) {
-      if (account?.provider === "twitter" && profile) {
+      if (account?.provider === "twitter" && profile && user.id) {
         const p = profile as any;
-        await db.user.update({
-          where: { id: user.id! },
-          data: {
-            twitterId: p.data?.id ?? account.providerAccountId,
-            twitterUsername: p.data?.username ?? p.screen_name,
-          },
-        });
+        try {
+          await db.user.update({
+            where: { id: user.id },
+            data: {
+              twitterId: p.data?.id ?? account.providerAccountId,
+              twitterUsername: p.data?.username ?? p.screen_name,
+            },
+          });
+        } catch {
+          // non-fatal: user created, twitter fields update failed
+        }
       }
       return true;
     },
