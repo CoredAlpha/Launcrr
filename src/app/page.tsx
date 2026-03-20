@@ -79,6 +79,52 @@ function useReveal() {
   return { ref, visible };
 }
 
+const LAUNCRR_CA = "Ep2NTxPuhT3wNfT3E6wPVv2fQh7veETnPuXiY2M6pump";
+const PUMP_URL = "https://pump.fun/coin/" + LAUNCRR_CA;
+
+function TokenRow() {
+  const [copied, setCopied] = useState(false);
+  const copy = () => {
+    navigator.clipboard.writeText(LAUNCRR_CA);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginTop: 28, flexWrap: "wrap" as const }}>
+      <a
+        href={PUMP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          padding: "10px 24px", borderRadius: 10,
+          background: "#10b981", color: "#06080c",
+          fontWeight: 700, fontSize: 14, textDecoration: "none",
+          transition: "opacity .2s",
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+      >
+        🚀 Buy $LAUNCRR
+      </a>
+      <button
+        onClick={copy}
+        style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          padding: "10px 20px", borderRadius: 10,
+          background: "#0c1018", border: "1px solid #1a2235",
+          color: copied ? "#10b981" : "#7a8ba8", fontWeight: 500, fontSize: 13,
+          cursor: "pointer", transition: "all .2s",
+        }}
+        onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#10b981"; e.currentTarget.style.color = "#e2e8f0"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#1a2235"; e.currentTarget.style.color = copied ? "#10b981" : "#7a8ba8"; }}
+      >
+        {copied ? "✓ Copied!" : `CA: ${LAUNCRR_CA.slice(0, 8)}…${LAUNCRR_CA.slice(-6)}`}
+      </button>
+    </div>
+  );
+}
+
 function TerminalPreview() {
   const [shown, setShown] = useState(0);
   useEffect(() => {
@@ -261,6 +307,9 @@ export default function LandingPage() {
               Get started — connect with X
             </button>
           )}
+
+          {/* Token row */}
+          <TokenRow />
 
           <TerminalPreview />
         </section>
