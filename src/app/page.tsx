@@ -130,7 +130,7 @@ function TerminalPreview() {
   );
 }
 
-function StepCard({ step, index }: { step: { icon: string; title: string; desc: string }; index: number }) {
+function StepCard({ step, index }: { step: { icon?: string; title: string; desc: string; color?: string; num?: string | number; code?: string }; index: number }) {
   const { ref, visible } = useReveal();
   return (
     <div
@@ -160,7 +160,7 @@ function StepCard({ step, index }: { step: { icon: string; title: string; desc: 
   );
 }
 
-function FeatureCard({ feat, index }: { feat: { icon: string; title: string; desc: string }; index: number }) {
+function FeatureCard({ feat, index }: { feat: { icon?: string; title: string; desc: string; color?: string; [key: string]: unknown }; index: number }) {
   const { ref, visible } = useReveal();
   return (
     <div
