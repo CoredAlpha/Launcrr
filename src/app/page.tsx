@@ -130,7 +130,7 @@ function TerminalPreview() {
   );
 }
 
-function StepCard({ step, index }) {
+function StepCard({ step, index }: { step: { icon: string; title: string; desc: string }; index: number }) {
   const { ref, visible } = useReveal();
   return (
     <div
@@ -160,7 +160,7 @@ function StepCard({ step, index }) {
   );
 }
 
-function FeatureCard({ feat, index }) {
+function FeatureCard({ feat, index }: { feat: { icon: string; title: string; desc: string }; index: number }) {
   const { ref, visible } = useReveal();
   return (
     <div
