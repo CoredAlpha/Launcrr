@@ -167,7 +167,7 @@ export default function DashboardPage() {
     );
   }
 
-  if (!session) return null;
+  // if (!session) return null;
 
   // ── derived stats ──
   const successCount = tokens.filter((t) => t.status === "SUCCESS").length;
