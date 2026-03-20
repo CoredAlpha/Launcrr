@@ -87,7 +87,7 @@ function TokenRow() {
   const copy = () => {
     navigator.clipboard.writeText(LAUNCRR_CA);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 1500);
   };
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginTop: 28, flexWrap: "wrap" as const }}>
@@ -117,7 +117,7 @@ function TokenRow() {
           cursor: "pointer", transition: "all .2s",
         }}
         onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#10b981"; e.currentTarget.style.color = "#e2e8f0"; }}
-        onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#1a2235"; e.currentTarget.style.color = copied ? "#10b981" : "#7a8ba8"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#1a2235"; e.currentTarget.style.color = ""; }}
       >
         {copied ? "✓ Copied!" : `CA: ${LAUNCRR_CA.slice(0, 8)}…${LAUNCRR_CA.slice(-6)}`}
       </button>
