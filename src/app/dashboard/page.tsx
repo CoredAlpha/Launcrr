@@ -132,10 +132,10 @@ export default function DashboardPage() {
     totalLaunches?: number;
   } | undefined;
 
-  // ── redirect if not authed ──
-  useEffect(() => {
-    if (status === "unauthenticated") router.push("/");
-  }, [status, router]);
+  // ── redirect if not authed (disabled temporarily) ──
+  // useEffect(() => {
+  //   if (status === "unauthenticated") router.push("/");
+  // }, [status, router]);
 
   // ── fetch tokens ──
   const fetchTokens = useCallback(() => {
