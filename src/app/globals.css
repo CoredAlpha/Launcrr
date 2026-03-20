@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #06080c;
+  color: #e2e8f0;
+}
+
+/* Solana wallet adapter overrides */
+.wallet-adapter-button {
+  font-family: 'Outfit', sans-serif !important;
+  border-radius: 10px !important;
+}
