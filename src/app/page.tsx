@@ -289,6 +289,7 @@ export default function LandingPage() {
               Go to Dashboard →
             </Link>
           ) : (
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
             <button
               style={styles.cta}
               onClick={() => signIn("twitter", { callbackUrl: "/dashboard" })}
@@ -306,6 +307,10 @@ export default function LandingPage() {
               </svg>
               Get started — connect with X
             </button>
+            <Link href="/dashboard" style={{ fontSize: 13, color: "#4a5568", textDecoration: "none", borderBottom: "1px solid #2d3748" }}>
+              View Dashboard →
+            </Link>
+            </div>
           )}
 
           {/* Token row */}
