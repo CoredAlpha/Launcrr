@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Launcrr — launch tokens with a tweet",
     description:
       "Connect your X account and Solana wallet. Tweet a command to @launcrr and your token launches on pump.fun in under 30 seconds — no code, no dashboard, no friction.",
-    url: "https://launcrr.vercel.app",
+    url: "https://launcrr.fun",
     siteName: "Launcrr",
     images: [
       {
