@@ -6,7 +6,35 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Launcrr — launch tokens with a tweet",
   description:
-    "Connect your X account and Solana wallet. Tweet to launch tokens on pump.fun in 30 seconds.",
+    "Connect your X account and Solana wallet. Tweet a command to @launcrr and your token launches on pump.fun in under 30 seconds — no code, no dashboard, no friction.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    title: "Launcrr — launch tokens with a tweet",
+    description:
+      "Connect your X account and Solana wallet. Tweet a command to @launcrr and your token launches on pump.fun in under 30 seconds — no code, no dashboard, no friction.",
+    url: "https://launcrr.vercel.app",
+    siteName: "Launcrr",
+    images: [
+      {
+        url: "/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Launcrr logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Launcrr — launch tokens with a tweet",
+    description:
+      "Connect your X account and Solana wallet. Tweet a command to @launcrr and your token launches on pump.fun in under 30 seconds — no code, no dashboard, no friction.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
